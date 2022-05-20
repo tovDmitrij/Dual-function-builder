@@ -1,0 +1,66 @@
+﻿<Window x:Class="MLTA_1_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:MLTA_1_2"
+        mc:Ignorable="d"
+        Title="№ 1-2" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
+            <LinearGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                    <RotateTransform Angle="-35" CenterX="0.5" CenterY="0.5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LinearGradientBrush.RelativeTransform>
+            <GradientStop Color="#FF170016" Offset="1"/>
+            <GradientStop Color="#FF003238"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="True" Grid.ColumnSpan="2">
+            <Label DockPanel.Dock="Bottom" Content="©Кузьмин Дмитрий гр.2015, 2022г." Background="#FF002D31" Width="auto" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" FontSize="16" FontWeight="Normal" Foreground="#DD9A9A9A"/>
+            <ScrollViewer Background="#FF003238" Foreground="#FF004048">
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
+                    <Label DockPanel.Dock="Top" Margin="5,5,5,0" Background="#FF00262B" Content="НАСТРОЙКИ" HorizontalContentAlignment="Center" Width="auto" FontSize="20" VerticalAlignment="Center" Foreground="#DDD2D2D2"/>
+                    <Label DockPanel.Dock="Top" Margin="0,5,0,5" Content="Кол-во перем." HorizontalContentAlignment="Center" Width="auto" FontSize="18" VerticalAlignment="Center" Foreground="#DDD2D2D2">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                        <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FF004546"/>
+                                <GradientStop Color="#FF003238" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <ComboBox materialDesign:HintAssist.Hint="Выберите кол-во" DockPanel.Dock="Top" x:Name="selectedCount" Margin="5,0,5,0" VerticalAlignment="Top" FontSize="16" Foreground="#DDD2D2D2" Background="#FF00282D" SelectionChanged="SelectionChanged">
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="1"/>
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="2"/>
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="3"/>
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="4"/>
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="5"/>
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="6"/>
+                        <ComboBoxItem Foreground="#DDD2D2D2" Background="#FF00282D" Content="7"/>
+                    </ComboBox>
+                    <Button DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="#DDD2D2D2" VerticalAlignment="Bottom" Margin="10px" Background="#FF00262B" FontWeight="Normal" BorderThickness="0,0,0,0" Click="Run" Cursor="Hand">Подтвердить</Button>
+                </StackPanel>
+            </ScrollViewer>
+            <Frame NavigationUIVisibility="Hidden" x:Name="truthTable" DockPanel.Dock="Left"/>
+            <Frame NavigationUIVisibility="Hidden" x:Name="result" DockPanel.Dock="Left"/>
+        </DockPanel>
+    </Grid>
+</Window>
