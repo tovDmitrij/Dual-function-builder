@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MLTA_1_2
+namespace Dual_Function_Builder
 {
     /// <summary>
     /// Совершенная конъюктивная нормальная форма (СКНФ)
@@ -7,6 +7,7 @@ namespace MLTA_1_2
     internal class PCNF
     {
         private readonly bool[] values;
+
         /// <summary>
         /// Совершенная конъюктивная нормальная форма (СКНФ)
         /// </summary>
@@ -15,10 +16,10 @@ namespace MLTA_1_2
         {
             this.values = values;
         }
+
         /// <summary>
         /// Построить СКНФ
         /// </summary>
-        /// <returns>Результат <see cref="string"/></returns>
         public string Run()
         {
             string result = "";
@@ -57,11 +58,11 @@ namespace MLTA_1_2
             }
             return result;
         }
+
         /// <summary>
         /// Создаёт строку по таблице истинности
         /// </summary>
         /// <param name="num">Номер строки</param>
-        /// <returns>Массив <see cref="bool[]"/></returns>
         private bool[] CreateRow(int num)
         {
             bool[] result = new bool[(int)Math.Log2(values.Length)];

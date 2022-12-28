@@ -1,17 +1,18 @@
-﻿<Page x:Class="MLTA_1_2.Result"
+﻿<Page x:Class="Dual_Function_Builder.Result"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:MLTA_1_2"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="result">
+
     <Grid>
         <Border Padding="10,10,10,10">
             <ScrollViewer Background="#FF003238" Foreground="#FF004048">
                 <DockPanel LastChildFill="True">
                     <Label DockPanel.Dock="Top" Margin="5,5,5,0" Background="#FF00262B" Content="РЕЗУЛЬТАТ" HorizontalContentAlignment="Center" Width="auto" FontSize="20" VerticalAlignment="Center" Foreground="#DDD2D2D2"/>
+                    
                     <Label DockPanel.Dock="Top" Margin="0,5,0,5" Content="Нормальные формы" HorizontalContentAlignment="Center" Width="auto" FontSize="18" VerticalAlignment="Center" Foreground="#DDD2D2D2">
                         <Label.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -28,7 +29,9 @@
                             </LinearGradientBrush>
                         </Label.Background>
                     </Label>
+                    
                     <Label DockPanel.Dock="Top" x:Name="labelFunction"/>
+                    
                     <Label DockPanel.Dock="Top" Margin="0,5,0,5" Content="Двойственная функция" HorizontalContentAlignment="Center" Width="auto" FontSize="18" VerticalAlignment="Center" Foreground="#DDD2D2D2">
                         <Label.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -45,10 +48,13 @@
                             </LinearGradientBrush>
                         </Label.Background>
                     </Label>
+                    
                     <Label DockPanel.Dock="Top" x:Name="labelDualFunction"/>
+                    
                     <Label DockPanel.Dock="Top" x:Name="labelSelfDual"/>
                 </DockPanel>
             </ScrollViewer>
         </Border>
     </Grid>
+
 </Page>

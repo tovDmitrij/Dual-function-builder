@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Media;
-namespace MLTA_1_2
+namespace Dual_Function_Builder
 {
     /// <summary>
     /// Выводит результат (СДНФ, СКНФ, ПНФ)
@@ -8,6 +8,7 @@ namespace MLTA_1_2
     public partial class Result : Page
     {
         private readonly bool[] truthTable;
+
         /// <summary>
         /// Выводит результат (СДНФ, СКНФ, ПНФ)
         /// </summary>
@@ -18,6 +19,7 @@ namespace MLTA_1_2
             truthTable = massive;
             Run();
         }
+
         private void Run()
         {
             bool dual = true;
@@ -54,10 +56,10 @@ namespace MLTA_1_2
             labelDualFunction.FontSize = 16;
             labelDualFunction.Foreground = Brushes.AliceBlue;
         }
+
         /// <summary>
         /// Преобразование <paramref name="a"/> ⊕ <paramref name="b"/> = (¬<paramref name="a"/>⋁¬<paramref name="b"/>)⋀(<paramref name="a"/>⋁<paramref name="b"/>)
         /// </summary>
-        /// <returns>Результат преобразования</returns>
         private static bool DoXOR(bool a, bool b) => (!a || !b) && (a || b);
     }
 }

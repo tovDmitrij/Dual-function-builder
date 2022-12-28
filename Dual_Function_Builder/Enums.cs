@@ -1,9 +1,10 @@
-﻿namespace MLTA_1_2
+﻿namespace Dual_Function_Builder
 {
     /// <summary>
     /// Список символов-действий
     /// </summary>
     enum Symbols { Or = '⋁', And = '⋀', Not = '¬', Xor = '⊕' }
+
     /// <summary>
     /// Список названий переменных
     /// </summary>

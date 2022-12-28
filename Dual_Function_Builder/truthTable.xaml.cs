@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Media;
-namespace MLTA_1_2
+namespace Dual_Function_Builder
 {
     /// <summary>
     /// Построение таблицы истинности
@@ -10,8 +10,11 @@ namespace MLTA_1_2
     public partial class TruthTable : Page
     {
         private CheckBox[] truthTable;
+
         private readonly int count;
+
         public CheckBox[] Table => truthTable;
+
         /// <summary>
         /// Построение таблицы истинности
         /// </summary>
@@ -23,6 +26,7 @@ namespace MLTA_1_2
             InitializeComponent();
             Run();
         }
+
         private void Run()
         {
             #region Обновление надписей для заголовков

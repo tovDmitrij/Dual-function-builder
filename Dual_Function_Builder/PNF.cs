@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-namespace MLTA_1_2
+namespace Dual_Function_Builder
 {
     /// <summary>
     /// Полиномиальная нормальная форма (ПНФ)
@@ -8,21 +8,22 @@ namespace MLTA_1_2
     internal class PNF
     {
         private readonly bool[] values;
+
         private readonly PDNF pdnf;
+
         /// <summary>
         /// Полиномиальная нормальная форма (ПНФ)
         /// </summary>
         /// <param name="values">Таблица истинности</param>
-        /// <param name="pdnf">СДНФ</param>
         public PNF(bool[] values)
         {
             this.values = values;
             pdnf = new PDNF(values);
         }
+
         /// <summary>
         /// Построить ПНФ
         /// </summary>
-        /// <returns>Результат <see cref="string"/></returns>
         public string Run()
         {
             string result = "";
@@ -82,11 +83,11 @@ namespace MLTA_1_2
 
             return result;
         }
+
         /// <summary>
         /// Создаёт строку по таблице истинности
         /// </summary>
         /// <param name="num">Номер строки</param>
-        /// <returns>Массив <see cref="bool[]"/></returns>
         private bool[] CreateRow(int num)
         {
             bool[] result = new bool[(int)Math.Log2(values.Length)];
@@ -99,10 +100,10 @@ namespace MLTA_1_2
             }
             return result;
         }
+
         /// <summary>
         /// Преобразование <paramref name="a"/> ⊕ <paramref name="b"/> = (¬<paramref name="a"/>⋁¬<paramref name="b"/>)⋀(<paramref name="a"/>⋁<paramref name="b"/>)
         /// </summary>
-        /// <returns>Результат преобразования</returns>
         private static bool DoXOR(bool a, bool b) => (!a || !b) && (a || b);
     }
 }
